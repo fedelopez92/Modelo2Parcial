@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         modelo = new Modelo();
         controlador = new Controlador(this, modelo);
         vista = new Vista(this);
-
+        MyListener myListener = new MyListener(modelo, vista, controlador);
+        vista.setearListener(myListener);
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.example.fede.modelo2parcial.Login;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -19,18 +20,19 @@ import java.net.URL;
 
 public class Hilo implements Runnable {
 
-    android.os.Handler handler;
+    Handler handler;
     Message message;
     Modelo modelo;
 
     public Hilo(Handler handler, Modelo modelo) {
         this.handler = handler;
         this.modelo = modelo;
+        this.message = new Message();
     }
 
     @Override
     public void run() {
-        byte[] bytes = getBytesDatabyPOST("http://192.168.1.38/login");
+        byte[] bytes = getBytesDatabyPOST("http://192.168.1.38:3000/login");
         message.obj = new String(bytes);//crea un string a traves de un array de bytes
         handler.sendMessage(message);
     }
@@ -63,6 +65,7 @@ public class Hilo implements Runnable {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
             if(response == 200){
+
                 byte[] buffer = new byte[1024];
                 int length = 0;
                 while((length = is.read(buffer)) != -1){
