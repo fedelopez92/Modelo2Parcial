@@ -25,7 +25,6 @@ public class MyListener implements View.OnClickListener {
     public void onClick(View view) {
 
         if(view.getId() == R.id.btnIngresar){
-            modelo.setFecha(vista.fecha.getText().toString());
             modelo.setTema(vista.tema.getText().toString());
             modelo.setTitulo(vista.titulo.getText().toString());
             modelo.setNoticia(vista.noticia.getText().toString());

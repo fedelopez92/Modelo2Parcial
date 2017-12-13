@@ -13,14 +13,12 @@ import com.example.fede.modelo2parcial.R;
 
 public class Vista {
 
-    public EditText fecha;
     public EditText tema;
     public EditText titulo;
     public EditText noticia;
     public Button btnIngresar;
 
     public Vista(Activity activity){
-        this.fecha = (EditText) activity.findViewById(R.id.fecha);
         this.tema = (EditText) activity.findViewById(R.id.tema);
         this.titulo = (EditText) activity.findViewById(R.id.titulo);
         this.noticia = (EditText) activity.findViewById(R.id.noticia);

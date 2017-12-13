@@ -1,5 +1,7 @@
 package com.example.fede.modelo2parcial.Login;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -16,11 +18,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("datosLogin", Context.MODE_PRIVATE);
         modelo = new Modelo();
-        controlador = new Controlador(this, modelo);
+        controlador = new Controlador(this, modelo, sharedPreferences);
         vista = new Vista(this);
         MyListener myListener = new MyListener(modelo, vista, controlador);
         vista.setearListener(myListener);
+
+        String email = sharedPreferences.getString("email", "default email");
+        String password = sharedPreferences.getString("password", "default password");
+
+        if(email != "default email" && password != "default password"){
+            modelo.setEmail(email);
+            modelo.setPassword(password);
+            controlador.t1.start();
+        }
     }
 
     @Override

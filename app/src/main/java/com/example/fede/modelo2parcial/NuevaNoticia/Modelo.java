@@ -6,18 +6,10 @@ package com.example.fede.modelo2parcial.NuevaNoticia;
 
 public class Modelo {
 
-    private String fecha;
     private String tema;
     private String titulo;
     private String noticia;
 
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
 
     public String getTema() {
         return tema;

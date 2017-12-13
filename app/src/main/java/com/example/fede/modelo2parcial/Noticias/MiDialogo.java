@@ -1,4 +1,4 @@
-package com.example.fede.modelo2parcial.Login;
+package com.example.fede.modelo2parcial.Noticias;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -21,8 +21,8 @@ public class MiDialogo extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         //getActivity() toma la activity que genero el dialogo
 
-        builder.setTitle("Alerta");
-        builder.setMessage("El email o el password es incorrecto");
+        builder.setTitle("Atencion");
+        builder.setMessage("Usted no tiene los permisos para ver esto");
 
         //para crear un dialogo con un layout propio:
         //View v = LayoutInflater.from(this).inflate(R.layout.layout);

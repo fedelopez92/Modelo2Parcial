@@ -3,6 +3,8 @@ package com.example.fede.modelo2parcial.Noticias;
 import android.os.Handler;
 import android.os.Message;
 
+import com.example.fede.modelo2parcial.Hilo;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,7 +27,7 @@ public class Controlador implements Handler.Callback{
     public Controlador(Main2Activity main2Activity){
         this.main2Activity = main2Activity;
         this.handler = new Handler(this);
-        this.t1 = new Thread(new Hilo(handler), "hilo 1");
+        this.t1 = new Thread(new Hilo(handler), "hilo 2");
         this.modelos = new ArrayList<Modelo>();
     }
 

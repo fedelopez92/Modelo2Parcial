@@ -11,5 +11,12 @@ public class Main3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+
+        Modelo modelo = new Modelo();
+        Vista vista = new Vista(this);
+        Controlador controlador = new Controlador(this, modelo);
+        MyListener myListener = new MyListener(modelo, vista, controlador);
+
+        vista.setearListener(myListener);
     }
 }

@@ -3,6 +3,7 @@ package com.example.fede.modelo2parcial.NuevaNoticia;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -41,7 +42,6 @@ public class Hilo implements Runnable {
         byte[] datos = null;
 
         Uri.Builder param = new Uri.Builder();
-        param.appendQueryParameter("fecha", modelo.getFecha());
         param.appendQueryParameter("tema", modelo.getTema());
         param.appendQueryParameter("titulo", modelo.getTitulo());
         param.appendQueryParameter("noticia", modelo.getNoticia());
